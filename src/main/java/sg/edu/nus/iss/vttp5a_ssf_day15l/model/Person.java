@@ -8,6 +8,10 @@ public class Person {
     private String fullName;
     private String email;
     
+    public Person() {
+
+    }
+    
     public Person(Integer id, String fullName, String email) {
         this.id = id;
         this.fullName = fullName;
