@@ -56,7 +56,7 @@ public class ListRepo {
         Long iFound = template.opsForList().indexOf(key, valueToDelete);
 
         if (iFound >= 0) {
-            template.opsForList().remove(key, iFound, valueToDelete);
+            template.opsForList().remove(key, 1, valueToDelete);
             isDeleted = true;
         }
 
