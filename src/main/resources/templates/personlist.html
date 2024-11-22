@@ -29,7 +29,7 @@
                     <td th:utext="${p.fullName}"></td>
                     <td th:utext="${p.email}"></td>
                     <td>
-                        <a class="btn btn-danger" th:href="@{#}">Delete</a>
+                        <a class="btn btn-danger" th:href="@{/persons/delete/{person-id}(person-id=${p.id})}">Delete</a>
                     </td>
                 </tr>
             </tbody>

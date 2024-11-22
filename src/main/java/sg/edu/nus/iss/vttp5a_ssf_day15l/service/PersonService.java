@@ -23,7 +23,7 @@ public class PersonService {
     
     public List<Person> findAll(String redisKey) {
 
-        List<Object> listData = personRepo.getList(redisKey);
+        List<String> listData = personRepo.getList(redisKey);
         List<Person> persons = new ArrayList<>();
 
         for(Object data: listData) {
@@ -36,6 +36,6 @@ public class PersonService {
     }
 
     public Boolean delete(String redisKey, Person person) {
-        return personRepo.deleteItem(redisKey, person.toString());
+        return personRepo.deleteItem(redisKey, person);
     }
 }

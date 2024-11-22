@@ -52,8 +52,13 @@ public class PersonController {
     
     @GetMapping("/delete/{person-id}")
     public String deletePersonRecord(@PathVariable("person-id") String personId) {
-        // logic 
-        // other shift the logic to service layer
+        // logic here (currently, simply do it here)
+        // or shift the logic to service layer
+        List<Person> persons = personService.findAll(Util.keyPerson);
+        Person foundPerson = persons.stream().filter(p -> p.getId().equals(Integer.parseInt(personId))).findFirst().get();
+        System.out.println("foundPerson : " + foundPerson.toString());
+
+        personService.delete(Util.keyPerson, foundPerson);
 
         return "redirect:/persons";
     }
